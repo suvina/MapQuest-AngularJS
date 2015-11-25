@@ -1,0 +1,24 @@
+
+* {
+	font-family: Arial, sans-serif;
+	color: #666633;
+}
+
+body {
+	background-color: #666633;
+}
+
+input{
+	width: 50%;
+}
+h1{
+color: #ffff99 ;
+
+}
+#directionarea{
+	background-color:#ffff99; 
+}
+label{
+color: #3333ff;
+
+}

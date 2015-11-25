@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="MyMapquest">
+<head>
+<meta charset="UTF-8">
+<title>MapQuest</title>
+
+
+
+<link type="text/css" rel="stylesheet" href="css/styles.css">
+
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="mapquest.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+         <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+</head>
+<body ng-controller="mapquestController" ng-init="initialize()">
+
+			<h1>MapQuest</h1>
+
+	
+		<label>FROM</label>
+				<input type="text" name="from" id="from" ng-model="mapsearch.from"
+					required placeholder="from" /> <br>
+			<label>TO</label>
+					<input type="text" name="to"
+					id="to" ng-model="mapsearch.to" required placeholder="to" /> <br>
+				<button id="directions" ng-disabled="searchform$invalid"
+					ng-click="onChange()">Get Directions</button>
+				<div id="directionarea" ng-show="directions.length>0">
+					<table>
+						
+							<b>From:</b> {{mapsearch.from}}, <b>To:</b> {{mapsearch.to}} <br>
+							<b>Distance:</b> {{directions.Distance}}miles - <b>Time:</b>
+							{{directions.Time}}
+						
+						<tbody ng-repeat="direction in directions">
+							<tr>
+								<td><img src="{{direction.image}}"></td>
+								<td>{{direction.step}}.</td>
+								<td><a href="{{direction.link}}">{{direction.text}}</a></td>
+								<td>{{direction.distance}}miles</td>
+							</tr>
+						</tbody>
+					</table>
+	
+	
+</body>
+</html>
